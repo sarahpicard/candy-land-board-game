@@ -1,5 +1,5 @@
 // DEFINE VARIABLES
-// variables - winner, turn, tie, playerLocation(?), greenSquares, purpleSquares, blueSquares, orangeSquares, redSquares, yellowSquares 
+// variables - winner, turn, playerLocation(?), greenSquares, purpleSquares, blueSquares, orangeSquares, redSquares, yellowSquares 
 
 // CACHED ELEMENT REFERENCES 
 // message 
@@ -9,7 +9,8 @@
 
 // EVENT LISTENERS   
 // click on card deck 
-// click on reset button 
+// click on restart button 
+// restart button should initiate modal with directions (STRETCH GOAL)
 
 
 // ------- Random Planning (conceptual) ----------// 
@@ -27,12 +28,13 @@
 
 // allow for both players to be on the same square 
 
+// use modal upon first entering the page for game directions (bootstrap)- STRETCH GOAL
+
 //------------------------------------------------------//
 // INIT FUNCTION 
 // message: player one's turn
 // card deck should be blank (not showing a color) and says "turn over" - player needs to click on the card deck to start. 
 // winner = false (will later hold 1 or -1 dependent upon player winning)
-// tie = false
 // turn = player 1 
 // player location = pre-square 1
 // waiting for user (player 1) to click the deck 
@@ -42,6 +44,7 @@
 // array representing orange squares 
 // array representing red squares
 // array representing yellow squares
+// modal present = true (shows the directions of the game) (STRETCH GOAL)
 
 // render()
 
@@ -53,15 +56,35 @@
         // need to seperate each array (if else statements to find the array that corresponds to the card deck)
 // render message stating who's turn it is 
 // render win message if there is a win (congratulations!)
-// render tie message if there is a tie? 
 
 // ----------------------- IF USING HANDLECLICK ------//
 // ------ user would need to click on the spot corresponding to the card color
+
 // handleClick function to move game piece to the corresponding board spot
+
 // obtain the index of the square that has been clicked 
+
 // make sure that ONLY the next square of specified color CAN be clicked 
+
 // update the board array (index should be changed to only allow the lowest possible to be clicked now)
 
+// game piece is moved to corresponding game spot (in accordance with the index in board array)
+
+
+// ----- player turn is changed ----//
+// change turn of player (turn variable)
+
+
+// --------- WINNER FUNCTION -----------//
+// determine win conditions (player one clicks index X - last spot on board), etc. 
+
+
+// there can be no tie, someone reaches the finish line first. 
+// return null if winner function is not evaluated to true 
+// render()
+
+// ------------- RESTART GAME BUTTON ---------//
+// run init function if restart button is pressed 
 
 
 
