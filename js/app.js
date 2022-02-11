@@ -1,6 +1,9 @@
 // DEFINE VARIABLES
 let winner, turn, playerLocation, greenSquares, purpleSquares, blueSquares, orangeSquares, redSquares, yellowSquares
 
+let deck1 = []
+let deck2 = []
+
 
 // CACHED ELEMENT REFERENCES 
 
@@ -8,16 +11,25 @@ const message = document.querySelector('#message')
 const gameBoard = document.querySelector('#game-board')
 const resetBtn = document.querySelector('.reset-btn')
 
-
+const deck1E = document.getElementById('deck-1')
+const deck2E = document.getElementById('deck-2')
 
 
 // EVENT LISTENERS   
-// click on card deck 
+// click on the draw card button
+document.getElementById('card-button').addEventListener('click', drawCardClick)
 // click on restart button 
-// restart button should initiate modal with directions (STRETCH GOAL)
+resetBtn.addEventListener('click', init)
+
 
 
 // ------- Random Planning (conceptual) ----------// 
+
+// FINISH THIS FUNCTION //
+// connects to the draw card button 
+function drawCardClick(event) {
+  console.log(event.target)
+}
 // color that pops up in card deck should correspond with the first of that same color in an array - making it only possible for the player to click on that specific square on the game board (first in array, second in array, etc. until player reaches the end of the game board and win condition is met)
 
 // would be nicer if the player piece automatically moves to the first available color of card turned over (STRETCH GOAL) (would have to connect the card deck colors with game board color arrays and move the piece there automatically?)
@@ -35,6 +47,12 @@ const resetBtn = document.querySelector('.reset-btn')
 // use modal upon first entering the page for game directions (bootstrap)- STRETCH GOAL
 
 //------------------------------------------------------//
+
+init()
+
+function init() {
+
+}
 // INIT FUNCTION 
 // message: player one's turn
 // card deck should be blank (not showing a color) and says "turn over" - player needs to click on the card deck to start. 
