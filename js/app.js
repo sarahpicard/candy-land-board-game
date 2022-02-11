@@ -1,11 +1,15 @@
 // DEFINE VARIABLES
-// variables - winner, turn, playerLocation(?), greenSquares, purpleSquares, blueSquares, orangeSquares, redSquares, yellowSquares 
+let winner, turn, playerLocation, greenSquares, purpleSquares, blueSquares, orangeSquares, redSquares, yellowSquares
+
 
 // CACHED ELEMENT REFERENCES 
-// message 
-// whole game board
-// card deck 
-// reset game button 
+
+const message = document.querySelector('#message')
+const gameBoard = document.querySelector('#game-board')
+const resetBtn = document.querySelector('.reset-btn')
+
+
+
 
 // EVENT LISTENERS   
 // click on card deck 
