@@ -14,6 +14,8 @@ const resetBtn = document.querySelector('.reset-btn')
 const deck1E = document.getElementById('deck-1')
 const deck2E = document.getElementById('deck-2')
 
+let boardSquares = document.querySelectorAll('.box')
+
 
 // EVENT LISTENERS   
 // click on the draw card button
@@ -21,19 +23,20 @@ document.getElementById('card-button').addEventListener('click', drawCardClick)
 // click on restart button 
 resetBtn.addEventListener('click', init)
 
+boardSquares.addEventListener('click', handleClick)
+
 
 //------------------------------------------------------//
 
 init()
 
 function init() {
-// message: player one's turn
-// card deck should be blank (not showing a color) and says "turn over" - player needs to click on the card deck to start. 
-// player location = pre-square 1
-// waiting for user (player 1) to click the deck 
+  // card deck should be blank (not showing a color)  
+  // player location = pre-square 1
 
   turn = 1
   winner = null
+  message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   greenSquares = []
   purpleSquares = []
   blueSquares = []
@@ -41,6 +44,7 @@ function init() {
   redSquares = []
   yellowSquares = []
   render()
+
 }
 // STRETCH GOAL - modal at init for game directions 
 
@@ -53,9 +57,9 @@ function render() {
 
 }
 // loops over each individual color array (representing each of that colors square on the board)
-  // for each iteration...
-  // use the index(s) of the iteration to access the corresponding color in the card deck
-        // need to seperate each array (if else statements to find the array that corresponds to the card deck)
+// for each iteration...
+// use the index(s) of the iteration to access the corresponding color in the card deck
+// need to seperate each array (if else statements to find the array that corresponds to the card deck)
 // render message stating who's turn it is 
 // render win message if there is a win (congratulations!)
 
@@ -63,7 +67,11 @@ function render() {
 // FINISH THIS FUNCTION //
 // connects to the draw card button 
 function drawCardClick(event) {
-  console.log(event.target)
+}
+
+// FINISH THIS FUNCTION //
+// connects to a click of each individual board square 
+function handleClick(event) {
 }
 
 // ----------------------- IF USING HANDLECLICK ------//
