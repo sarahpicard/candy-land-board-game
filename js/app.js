@@ -4,6 +4,8 @@ let winner, turn, playerLocation, greenSquares, purpleSquares, blueSquares, oran
 let deck1 = []
 let deck2 = []
 
+let cardToRemove, cardPicked
+
 
 // CACHED ELEMENT REFERENCES 
 
@@ -14,6 +16,9 @@ const resetBtn = document.querySelector('.reset-btn')
 
 let boardSquares = document.querySelectorAll('.box')
 
+let deck1El = document.getElementById('deck-1')
+let deck2El = document.getElementById('deck-2')
+
 
 // EVENT LISTENERS   
 // click on restart button 
@@ -21,13 +26,14 @@ resetBtn.addEventListener('click', init)
 
 boardSquares.addEventListener('click', handleClickBoard)
 
+document.getElementById('card-button').addEventListener('click', handleClick)
+
 
 //------------------------------------------------------//
 
 init()
 
 function init() {
-  // card deck should be blank (not showing a color)  
   // player location = pre-square 1
 
   turn = 1
@@ -39,6 +45,7 @@ function init() {
   orangeSquares = []
   redSquares = []
   yellowSquares = []
+  deck1 = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'o1', 'o2', 'o3', 'o4', 'o5', 'o6', 'o7', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'y1', 'y2', 'y3', 'y4', 'y5', 'y6', 'y7']
   render()
 
 }
@@ -50,7 +57,7 @@ function init() {
 //----------------------------------------------------//
 // RENDER FUNCTION 
 function render() {
-
+  
 }
 // loops over each individual color array (representing each of that colors square on the board)
 // for each iteration...
@@ -118,21 +125,12 @@ function handleClickBoard(event) {
 
 //----------------- CARD DECK FUNCTIONALITY ------------------------//
 
-let cardToRemove, cardPicked
 
+// init()
 
-let deck1El = document.getElementById('deck-1')
-let deck2El = document.getElementById('deck-2')
-
-
-document.getElementById('card-button').addEventListener('click', handleClick)
-
-
-init()
-
-function init() {
-  deck1 = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'o1', 'o2', 'o3', 'o4', 'o5', 'o6', 'o7', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'y1', 'y2', 'y3', 'y4', 'y5', 'y6', 'y7']
-}
+// function init() {
+//   deck1 = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'o1', 'o2', 'o3', 'o4', 'o5', 'o6', 'o7', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'y1', 'y2', 'y3', 'y4', 'y5', 'y6', 'y7']
+// }
 
 function handleClick() {
   if (deck1.length > 0) {
