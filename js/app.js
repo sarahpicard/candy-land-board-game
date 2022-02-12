@@ -11,19 +11,15 @@ const message = document.querySelector('#message')
 const gameBoard = document.querySelector('#board')
 const resetBtn = document.querySelector('.reset-btn')
 
-const deck1E = document.getElementById('deck-1')
-const deck2E = document.getElementById('deck-2')
 
 let boardSquares = document.querySelectorAll('.box')
 
 
 // EVENT LISTENERS   
-// click on the draw card button
-document.getElementById('card-button').addEventListener('click', drawCardClick)
 // click on restart button 
 resetBtn.addEventListener('click', init)
 
-boardSquares.addEventListener('click', handleClick)
+boardSquares.addEventListener('click', handleClickBoard)
 
 
 //------------------------------------------------------//
@@ -65,13 +61,8 @@ function render() {
 
 
 // FINISH THIS FUNCTION //
-// connects to the draw card button 
-function drawCardClick(event) {
-}
-
-// FINISH THIS FUNCTION //
 // connects to a click of each individual board square 
-function handleClick(event) {
+function handleClickBoard(event) {
 }
 
 // ----------------------- IF USING HANDLECLICK ------//
@@ -123,4 +114,50 @@ function handleClick(event) {
 // allow for both players to be on the same square 
 
 // use modal upon first entering the page for game directions (bootstrap)- STRETCH GOAL
+
+
+//----------------- CARD DECK FUNCTIONALITY ------------------------//
+
+let cardToRemove, cardPicked
+
+
+let deck1El = document.getElementById('deck-1')
+let deck2El = document.getElementById('deck-2')
+
+
+document.getElementById('card-button').addEventListener('click', handleClick)
+
+
+init()
+
+function init() {
+  deck1 = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'o1', 'o2', 'o3', 'o4', 'o5', 'o6', 'o7', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'y1', 'y2', 'y3', 'y4', 'y5', 'y6', 'y7']
+}
+
+function handleClick() {
+  if (deck1.length > 0) {
+    let randIdx = Math.floor(Math.random() * deck1.length)
+    cardPicked = deck1.splice(randIdx, 1)[0]
+    deck2.push(cardPicked)
+    render(cardPicked)
+  }
+}
+
+
+function render() {
+  deck2El.classList.remove('outline')
+  if (deck2.length > 1) {
+    deck2El.classList.remove(cardToRemove)
+  }
+  cardToRemove = cardPicked
+  deck2El.classList.add(cardPicked)
+  if (deck2.length === 26) {
+    deck2El.classList.add('shadow')
+    deck1El.classList.remove('shadow')
+  }
+  if (deck1.length === 0) {
+    deck1El.classList.add('outline')
+    deck1El.classList.remove('back')
+  }
+}
 

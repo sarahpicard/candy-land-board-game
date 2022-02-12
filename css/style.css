@@ -43,3 +43,30 @@
   background-color: var(--blue-square);
 }
 
+/* CARD FUNCTIONALITY  */
+.card-containter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 3vh;
+}
+
+.card-outline {
+  border: 0.15em dashed #de82f1;
+}
+
+.card.shadow {
+  box-shadow: 7px 7px 7px 0 rgba(41, 41, 41, 0.95) !important;
+}
+
+.card-btn {
+  margin-top: 2vh; 
+  color: white; 
+  background-color: #202d7a;
+  font-weight: bold;
+  border: 2px solid #202d7a;
+}
