@@ -24,7 +24,9 @@ let deck2El = document.getElementById('deck-2')
 // click on restart button 
 resetBtn.addEventListener('click', init)
 
-boardSquares.addEventListener('click', handleClickBoard)
+boardSquares.forEach((square) => {
+  square.addEventListener('click', handleClickBoard)
+})
 
 document.getElementById('card-button').addEventListener('click', handleClick)
 
@@ -57,8 +59,52 @@ function init() {
 //----------------------------------------------------//
 // RENDER FUNCTION 
 function render() {
-  
+  greenSquares.forEach((cell, idx) => {
+    let playerSpot
+    if (greenSquares[idx] === 1) {
+      playerSpot = 'X'
+    } else if (greenSquares[idx] === -1) {
+      playerSpot = 'O'
+    } else if (greenSquares[idx] === null) {
+      playerSpot = ''
+    }
+    boardSquares[idx].innerHTML === playerSpot
+  })
+
+  if (!winner) {
+    message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
+  } else {
+    message.innerText = `Congratulations player ${winner === 1 ? 'One' : 'Two'}!`
+  }
 }
+
+
+
+
+if (cardPicked === 'b1' || 'b2' || 'b3' || 'b4' || 'b5' || 'b6' || 'b7') {
+
+} else {
+  if (cardPicked === 'g1' || 'g2' || 'g3' || 'g4' || 'g5' || 'g6' || 'g7') {
+
+  } else {
+    if (cardPicked === 'o1' || 'o2' || 'o3' || 'o4' || 'o5' || 'o6' || 'o7') {
+
+    } else {
+      if (cardPicked === 'p1' || 'p2' || 'p3' || 'p4' || 'p5' || 'p6' || 'p7') {
+
+      } else {
+        if (cardPicked === 'r1' || 'r2' || 'r3' || 'r4' || 'r5' || 'r6' || 'r7') {
+
+        } else {
+          if (cardPicked === 'y1' || 'y2' || 'y3' || 'y4' || 'y5' || 'y6' || 'y7') {
+
+          }
+        }
+      }
+    }
+  }
+} 
+
 // loops over each individual color array (representing each of that colors square on the board)
 // for each iteration...
 // use the index(s) of the iteration to access the corresponding color in the card deck
