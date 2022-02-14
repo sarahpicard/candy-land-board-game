@@ -1,10 +1,12 @@
 // DEFINE VARIABLES
-let winner, turn, playerLocation, greenSquares, purpleSquares, blueSquares, orangeSquares, redSquares, yellowSquares
+let winner, turn, playerLocation, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
 
 let deck1 = []
 let deck2 = []
 
 let cardToRemove, cardPicked
+
+
 
 
 // CACHED ELEMENT REFERENCES 
@@ -18,6 +20,7 @@ let boardSquares = document.querySelectorAll('.box')
 
 let deck1El = document.getElementById('deck-1')
 let deck2El = document.getElementById('deck-2')
+
 
 
 // EVENT LISTENERS   
@@ -37,10 +40,10 @@ init()
 
 function init() {
   // player location = pre-square 1
-
   turn = 1
   winner = null
   message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
+  boardSquares = ['green', 'purple', 'red', 'yellow', 'orange', 'blue', 'green', 'purple', 'yellow', 'red', 'blue', 'purple', 'yellow', 'green', 'orange', 'red', 'blue', 'purple', 'yellow', 'green', '', '', '', '', '', '', '', '', '', '', '', '']
   greenSquares = []
   purpleSquares = []
   blueSquares = []
@@ -51,12 +54,19 @@ function init() {
   render()
 
 }
+
+
 // STRETCH GOAL - modal at init for game directions 
 
 
-
-
 //----------------------------------------------------//
+
+function checkGreen(colorGreen) {
+  if (boardSquares.includes('green')) {
+    greenSquares.push(colorGreen)
+  }
+}
+
 // RENDER FUNCTION 
 function render() {
   greenSquares.forEach((cell, idx) => {
