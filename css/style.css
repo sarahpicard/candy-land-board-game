@@ -1,14 +1,3 @@
-:root {
-  --yellow-square: #ebe6a7;
-  --orange-square: #ef9f6d;
-  --red-square: #d86d6d;
-  --purple-square: #de82f1;
-  --blue-square: #6f79b6;
-  --green-square: #6fcb6c;
-
-}
-
-
 .game-board {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
@@ -19,30 +8,6 @@
 
 .box {
   border: 1px solid black;
-}
-
-#red {
-  background-color: var(--red-square);
-}
-
-#purple {
-  background-color: var(--purple-square);
-}
-
-#green {
-  background-color: var(--green-square);
-}
-
-#yellow {
-  background-color: var(--yellow-square)
-}
-
-#orange {
-  background-color: var(--orange-square);
-}
-
-#blue {
-  background-color: var(--blue-square);
 }
 
 /* CARD FUNCTIONALITY  */
