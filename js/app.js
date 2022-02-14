@@ -14,7 +14,7 @@ const resetBtn = document.getElementById('reset-button')
 
 
 let boardSquares = document.querySelectorAll('.box')
-
+console.log(boardSquares)
 let deck1El = document.getElementById('deck-1')
 let deck2El = document.getElementById('deck-2')
 
@@ -25,19 +25,19 @@ resetBtn.addEventListener('click', init)
 document.getElementById('card-button').addEventListener('click', handleClick)
 
 //------------------------------------------------------//
-let g1, g2, g3, g4, g5, g6, g7 = '#6fcb6c'
-let y1, y2, y3, y4, y5, y6, y7 = '#ebe6a7'
-let b1, b2, b3, b4, b5, b6, b7 = '#6f79b6'
-let p1, p2, p3, p4, p5, p6, p7 = '#de82f1'
-let r1, r2, r3, r4, r5, r6, r7 = '#d86d6d'
-let o1, o2, o3, o4, o5, o6, o7 = '#ef9f6d'
+// let g1, g2, g3, g4, g5, g6, g7 = '#6fcb6c'
+// let y1, y2, y3, y4, y5, y6, y7 = '#ebe6a7'
+// let b1, b2, b3, b4, b5, b6, b7 = '#6f79b6'
+// let p1, p2, p3, p4, p5, p6, p7 = '#de82f1'
+// let r1, r2, r3, r4, r5, r6, r7 = '#d86d6d'
+// let o1, o2, o3, o4, o5, o6, o7 = '#ef9f6d'
 
-// let green = '#6fcb6c'
-// let yellow = '#ebe6a7'
-// let blue = '#6f79b6'
-// let purple = '#de82f1'
-// let red = '#d86d6d'
-// let orange = '#ef9f6d'
+let green = '#6fcb6c'
+let yellow = '#ebe6a7'
+let blue = '#6f79b6'
+let purple = '#de82f1'
+let red = '#d86d6d'
+let orange = '#ef9f6d'
 
 init()
 
@@ -46,9 +46,9 @@ function init() {
   winner = null
   playerLocation = boardSquares[0]
   message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
-  boardColors = ['g1', 'p1', 'r1', 'y1', 'o1', 'b1', 'g2', 'p2', 'y2', 'r2', 'b2', 'p3', 'y3', 'g3', 'o2', 'r3', 'b3', 'p4', 'y4', 'g4', 'o3', 'r4', 'b4', 'p5', 'g5', 'y5', 'r5', 'o4', 'g6', 'y6', 'p6', 'b5']
+  // boardColors = ['g1', 'p1', 'r1', 'y1', 'o1', 'b1', 'g2', 'p2', 'y2', 'r2', 'b2', 'p3', 'y3', 'g3', 'o2', 'r3', 'b3', 'p4', 'y4', 'g4', 'o3', 'r4', 'b4', 'p5', 'g5', 'y5', 'r5', 'o4', 'g6', 'y6', 'p6', 'b5']
   // boardColors = [g1, p1, r1, y1, o1, b1, g2, p2, y2, r2, b2, p3, y3, g3, o2, r3, b3, p4, y4, g4, o3, r4, b4, p5, g5, y5, r5, o4, g6, y6, p6, b5]
-  // boardColors = [green, purple, red, yellow, orange, blue, green, purple, yellow, red, blue, purple, yellow, green, orange, red, blue, purple, yellow, green, orange, red, blue, purple, green, yellow, red orange, green, yellow, purple, blue]
+  boardColors = [green, purple, red, yellow, orange, blue, green, purple, yellow, red, blue, purple, yellow, green, orange, red, blue, purple, yellow, green, orange, red, blue, purple, green, yellow, red, orange, green, yellow, purple, blue]
   deck1 = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'o1', 'o2', 'o3', 'o4', 'o5', 'o6', 'o7', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'y1', 'y2', 'y3', 'y4', 'y5', 'y6', 'y7']
   deck2 = []
   render()
@@ -87,14 +87,14 @@ function renderCards() {
 //----------------------------------------------------//
 
 function render() {
-  // boardSquares.forEach((square, idx) => {
-  //   square.style.background = boardColors[idx]
-  // })
-  for (let i = 0; i < boardColors.length; i++) {
-  if (boardColors == 'g1') {
-    square.style.background = '#6fcb6c'
-  }
-}
+  boardSquares.forEach((square, idx) => {
+    square.style.background = boardColors[idx]
+  })
+  //   for (let i = 0; i < boardColors.length; i++) {
+  //   if (boardColors[i] == 'g1') {
+  //     square.style.background = '#6fcb6c'
+  //   }
+  // }
 
   if (!winner) {
     message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
@@ -104,7 +104,7 @@ function render() {
 }
 
 function cardToBoard(cardPicked) {
-  console.log(cardPicked)
+  console.log(playerLocation)
   for (i = playerLocation; i < boardColors.length; i++) {
     if (cardPicked[0] === boardColors[i]) {
       movePlayer()
@@ -113,13 +113,14 @@ function cardToBoard(cardPicked) {
   }
 }
 
-function movePlayer() {
-  if (turn === 1) {
-    playerLocation.innerHTML = 'X'
-  } else {
-    playerLocation.innerHTML = 'O'
-  }
-}
+// function movePlayer() {
+//   // console.log(playerLocation)
+//   if (turn === 1) {
+//     playerLocation.innerText = 'X'
+//   } else {
+//     playerLocation.innerText = 'O'
+//   }
+// }
 
 
 
