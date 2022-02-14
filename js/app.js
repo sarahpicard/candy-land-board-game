@@ -18,14 +18,11 @@ let boardSquares = document.querySelectorAll('.box')
 let deck1El = document.getElementById('deck-1')
 let deck2El = document.getElementById('deck-2')
 
-
 //------------------------------------------------------------------------
 
 resetBtn.addEventListener('click', init)
 
-
 document.getElementById('card-button').addEventListener('click', handleClick)
-
 
 //------------------------------------------------------//
 let green = '#6fcb6c'
@@ -100,7 +97,6 @@ function cardToBoard(cardPicked) {
     }
   }
 }
-
 
 
 
