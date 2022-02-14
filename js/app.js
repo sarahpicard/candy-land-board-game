@@ -10,7 +10,7 @@ let cardToRemove, cardPicked
 
 const message = document.querySelector('#message')
 const gameBoard = document.querySelector('#board')
-const resetBtn = document.querySelector('.reset-btn')
+const resetBtn = document.getElementById('reset-button')
 
 
 let boardSquares = document.querySelectorAll('.box')
@@ -41,6 +41,7 @@ function init() {
   message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   boardColors = [green, purple, red, yellow, orange, blue, green, purple, yellow, red, blue, purple, yellow, green, orange, red, blue, purple, yellow, green, orange, red, blue, purple, green, yellow, red, orange, green, yellow, purple, blue]
   deck1 = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'o1', 'o2', 'o3', 'o4', 'o5', 'o6', 'o7', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'y1', 'y2', 'y3', 'y4', 'y5', 'y6', 'y7']
+  deck2 = []
   render()
 
 }
