@@ -1,11 +1,10 @@
 // DEFINE VARIABLES
-let winner, turn, playerLocation, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
+let winner, turn, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
 
 let deck1 = []
 let deck2 = []
 
 let cardToRemove, cardPicked
-
 
 
 
@@ -42,8 +41,9 @@ function init() {
   // player location = pre-square 1
   turn = 1
   winner = null
+  playerLocation = boardSquares[0]
   message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
-  boardSquares = ['green', 'purple', 'red', 'yellow', 'orange', 'blue', 'green', 'purple', 'yellow', 'red', 'blue', 'purple', 'yellow', 'green', 'orange', 'red', 'blue', 'purple', 'yellow', 'green', '', '', '', '', '', '', '', '', '', '', '', '']
+  boardColors = ['green', 'purple', 'red', 'yellow', 'orange', 'blue', 'green', 'purple', 'yellow', 'red', 'blue', 'purple', 'yellow', 'green', 'orange', 'red', 'blue', 'purple', 'yellow', 'green', 'orange', 'red', 'blue', 'purple', 'green', 'yellow', 'red', 'orange', 'green', 'yellow', 'purple', 'blue']
   greenSquares = []
   purpleSquares = []
   blueSquares = []
@@ -55,70 +55,66 @@ function init() {
 
 }
 
+// function playerCell(i) {
+//   let playerLocation = boardSquares[i]
+//   for (let i = 0; i < boardSquares.length; i++) {
+//     while (playerLocation.includes('green') 
+//   }
+// }
+
+// function playerCell(idx) {
+//   boardSquares.forEach(color, idx) {
+//     if (cardPicked === 'b1' || 'b2' || 'b3' || 'b4' || 'b5' || 'b6' || 'b7') {
+//       playerLocation[idx]
+//     }
+//   }
+// }
+
+
+
+// playerLocation - variable stores where play is currently (need one for both players?)- should store the index of players piece
+// next card - enter loop until you iterate to playerLocation === 'yellow'
+// that index becomes new playerLocation
+
 
 // STRETCH GOAL - modal at init for game directions 
 
 
 //----------------------------------------------------//
 
-function checkGreen(colorGreen) {
-  if (boardSquares.includes('green')) {
-    greenSquares.push(colorGreen)
-  }
-}
 
 // RENDER FUNCTION 
-function render() {
-  greenSquares.forEach((cell, idx) => {
-    let playerSpot
-    if (greenSquares[idx] === 1) {
-      playerSpot = 'X'
-    } else if (greenSquares[idx] === -1) {
-      playerSpot = 'O'
-    } else if (greenSquares[idx] === null) {
-      playerSpot = ''
-    }
-    boardSquares[idx].innerHTML === playerSpot
-  })
+// function render() {
+//   greenSquares.forEach((cell, idx) => {
+//     let playerSpot
+//     if (greenSquares[idx] === 1) {
+//       playerSpot = 'X'
+//     } else if (greenSquares[idx] === -1) {
+//       playerSpot = 'O'
+//     } else if (greenSquares[idx] === null) {
+//       playerSpot = ''
+//     }
+//     boardSquares[idx].innerHTML === playerSpot
+//   })
 
-  if (!winner) {
-    message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
-  } else {
-    message.innerText = `Congratulations player ${winner === 1 ? 'One' : 'Two'}!`
-  }
+//   if (!winner) {
+//     message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
+//   } else {
+//     message.innerText = `Congratulations player ${winner === 1 ? 'One' : 'Two'}!`
+//   }
+// }
+
+function render() {
+  boardSquares.forEach((square, idx) => {
+    console.log(square, idx)
+    square.style.background = boardColors[idx]
+  })
 }
 
 
 
 
-if (cardPicked === 'b1' || 'b2' || 'b3' || 'b4' || 'b5' || 'b6' || 'b7') {
-
-} else {
-  if (cardPicked === 'g1' || 'g2' || 'g3' || 'g4' || 'g5' || 'g6' || 'g7') {
-
-  } else {
-    if (cardPicked === 'o1' || 'o2' || 'o3' || 'o4' || 'o5' || 'o6' || 'o7') {
-
-    } else {
-      if (cardPicked === 'p1' || 'p2' || 'p3' || 'p4' || 'p5' || 'p6' || 'p7') {
-
-      } else {
-        if (cardPicked === 'r1' || 'r2' || 'r3' || 'r4' || 'r5' || 'r6' || 'r7') {
-
-        } else {
-          if (cardPicked === 'y1' || 'y2' || 'y3' || 'y4' || 'y5' || 'y6' || 'y7') {
-
-          }
-        }
-      }
-    }
-  }
-} 
-
-// loops over each individual color array (representing each of that colors square on the board)
-// for each iteration...
 // use the index(s) of the iteration to access the corresponding color in the card deck
-// need to seperate each array (if else statements to find the array that corresponds to the card deck)
 // render message stating who's turn it is 
 // render win message if there is a win (congratulations!)
 
@@ -198,7 +194,7 @@ function handleClick() {
 }
 
 
-function render() {
+function renderCards() {
   deck2El.classList.remove('outline')
   if (deck2.length > 1) {
     deck2El.classList.remove(cardToRemove)
