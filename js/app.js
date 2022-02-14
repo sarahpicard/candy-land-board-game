@@ -54,8 +54,9 @@ function init() {
 function handleClick() {
   if (deck1.length > 0) {
     let randIdx = Math.floor(Math.random() * deck1.length)
-    cardPicked = deck1.splice(randIdx, 1)[0]
+    cardPicked = deck1.splice(randIdx, 1)
     deck2.push(cardPicked)
+    cardToBoard(cardPicked)
     renderCards(cardPicked)
   }
 }
@@ -82,57 +83,25 @@ function render() {
   boardSquares.forEach((square, idx) => {
     square.style.background = boardColors[idx]
   })
-
-  for (let i = 0; i < boardColors.length; i++) {
-    if (boardColors[i] === green) {
-      return playerSpot
-    } else {
-      if (boardColors[i] === red) {
-        return playerSpot
-      } else {
-        if (boardColors[i] === yellow) {
-          return playerSpot
-        } else {
-          if (boardColors[i] === orange) {
-            return playerSpot
-          } else {
-            if (boardColors[i] === purple) {
-              return playerSpot
-            } else {
-              if (boardColors[i] === blue) {
-                return playerSpot
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  
   if (!winner) {
     message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   } else {
     message.innerText = `Congratulations player ${winner === 1 ? 'One' : 'Two'}!`
   }
-  cardToBoard()
 }
 
 
-function cardToBoard(card) {
-  console.log(card)
-  for (i = 0; i < deck1.length; i ++) {
-    if (cardPicked === 'b1') {
-      console.log('its blue')
+function cardToBoard(cardPicked) {
+  console.log(cardPicked)
+  for (i = playerLocation; i < boardColors.length; i ++) {
+    if (cardPicked[0][0] === boardColors[i]) {
+      return playerLocation = boardColors[i]
     }
   }
 }
 
-function playerSpot() {
 
-}
-
-
-
-// use the index(s) of the iteration to access the corresponding color in the card deck
 
 
 
