@@ -46,3 +46,22 @@
 .playerOneToken {
   color: red;
 }
+
+.green{
+  background-color: #6fcb6c;
+} 
+.yellow {
+  background-color: #ebe6a7;
+}
+.blue { 
+  background-color: #6f79b6;
+}
+.purple {
+  background-color: #de82f1;
+}
+.red {
+  background-color: #d86d6d;
+}
+.orange {
+  background-color: #ef9f6d;
+}

@@ -93,7 +93,7 @@ function render() {
     //     square.style.background = '#6fcb6c'
     // }
     // square.style.background = boardColors[idx]
-    console.log(square.id.substring(2), playerLocation)
+    // console.log('finding current square', square.id.substring(2))
     if (playerLocation === parseInt(square.id.substring(2))) {
       square.classList.add('playerOneToken')
       // console.log('match')
@@ -102,18 +102,18 @@ function render() {
     }
   })
 
-  boardColors.forEach((square, idx) => {
-    let squareLetter
-    // console.log(square)
-    if (boardColors[idx] === 1) {
-      squareLetter = 'X'
-    } else if (boardColors[idx] === -1) {
-      squareLetter = 'O'
-    } else if (boardColors[idx] === null) {
-      squareLetter = ''
-    }
-    boardSquares[idx].innerHTML = squareLetter
-  })
+  // boardColors.forEach((square, idx) => {
+  //   let squareLetter
+  //   // console.log(square)
+  //   if (boardColors[idx] === 1) {
+  //     squareLetter = 'X'
+  //   } else if (boardColors[idx] === -1) {
+  //     squareLetter = 'O'
+  //   } else if (boardColors[idx] === null) {
+  //     squareLetter = ''
+  //   }
+  //   boardSquares[idx].innerHTML = squareLetter
+  // })
   if (!winner) {
     message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   } else {
@@ -124,11 +124,12 @@ function render() {
 function cardToBoard(cardPicked) {
   console.log(playerLocation, 'player')
   for (i = playerLocation; i < boardColors.length; i++) {
-    console.log('length', boardColors.length)
-    console.log(cardPicked[0], boardColors[i])
-    if (cardPicked[0] === boardColors[i]) {
+    console.log('card picked', cardPicked[0])
+    console.log(cardPicked[0][0], boardColors[i][0])
+    if (cardPicked[0][0] === boardColors[i][0]) {
       // movePlayer()
-      return playerLocation = boardColors[i]
+      console.log('match found on', i)
+      return playerLocation = i
     }
   }
 }
