@@ -1,5 +1,5 @@
 // DEFINE VARIABLES
-let winner, turn, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
+let winner, turn, playerLocation, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
 
 let deck1 = []
 let deck2 = []
@@ -44,11 +44,11 @@ init()
 function init() {
   turn = 1
   winner = null
-  playerLocation = boardSquares[0]
+  playerLocation = 0
   message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
-  // boardColors = ['g1', 'p1', 'r1', 'y1', 'o1', 'b1', 'g2', 'p2', 'y2', 'r2', 'b2', 'p3', 'y3', 'g3', 'o2', 'r3', 'b3', 'p4', 'y4', 'g4', 'o3', 'r4', 'b4', 'p5', 'g5', 'y5', 'r5', 'o4', 'g6', 'y6', 'p6', 'b5']
+  boardColors = ['g1', 'p1', 'r1', 'y1', 'o1', 'b1', 'g2', 'p2', 'y2', 'r2', 'b2', 'p3', 'y3', 'g3', 'o2', 'r3', 'b3', 'p4', 'y4', 'g4', 'o3', 'r4', 'b4', 'p5', 'g5', 'y5', 'r5', 'o4', 'g6', 'y6', 'p6', 'b5']
   // boardColors = [g1, p1, r1, y1, o1, b1, g2, p2, y2, r2, b2, p3, y3, g3, o2, r3, b3, p4, y4, g4, o3, r4, b4, p5, g5, y5, r5, o4, g6, y6, p6, b5]
-  boardColors = [green, purple, red, yellow, orange, blue, green, purple, yellow, red, blue, purple, yellow, green, orange, red, blue, purple, yellow, green, orange, red, blue, purple, green, yellow, red, orange, green, yellow, purple, blue]
+  // boardColors = [green, purple, red, yellow, orange, blue, green, purple, yellow, red, blue, purple, yellow, green, orange, red, blue, purple, yellow, green, orange, red, blue, purple, green, yellow, red, orange, green, yellow, purple, blue]
   deck1 = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'o1', 'o2', 'o3', 'o4', 'o5', 'o6', 'o7', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'y1', 'y2', 'y3', 'y4', 'y5', 'y6', 'y7']
   deck2 = []
   render()
@@ -65,6 +65,7 @@ function handleClick() {
     deck2.push(cardPicked)
     cardToBoard(cardPicked)
     renderCards(cardPicked)
+    render()
   }
 }
 
@@ -88,10 +89,22 @@ function renderCards() {
 
 function render() {
   boardSquares.forEach((square, idx) => {
-    square.style.background = boardColors[idx]
+    //   if (boardSquares[i] == 'g1') {
+    //     square.style.background = '#6fcb6c'
+    // }
+    // square.style.background = boardColors[idx]
+    console.log(square.id.substring(2), playerLocation)
+    if (playerLocation === parseInt(square.id.substring(2))) {
+      square.classList.add('playerOneToken')
+      // console.log('match')
+    } else {
+      square.classList.remove('playerOneToken')
+    }
   })
+
   boardColors.forEach((square, idx) => {
     let squareLetter
+    // console.log(square)
     if (boardColors[idx] === 1) {
       squareLetter = 'X'
     } else if (boardColors[idx] === -1) {
@@ -106,16 +119,13 @@ function render() {
   } else {
     message.innerText = `Congratulations player ${winner === 1 ? 'One' : 'Two'}!`
   }
-    //   for (let i = 0; i < boardColors.length; i++) {
-  //   if (boardColors[i] == 'g1') {
-  //     square.style.background = '#6fcb6c'
-  //   }
-  // }
 }
 
 function cardToBoard(cardPicked) {
-  console.log(playerLocation)
+  console.log(playerLocation, 'player')
   for (i = playerLocation; i < boardColors.length; i++) {
+    console.log('length', boardColors.length)
+    console.log(cardPicked[0], boardColors[i])
     if (cardPicked[0] === boardColors[i]) {
       // movePlayer()
       return playerLocation = boardColors[i]
