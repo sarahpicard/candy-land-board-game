@@ -77,11 +77,14 @@ function render() {
     // console.log('finding current square', square.id.substring(2))
     if (playerLocation === parseInt(square.id.substring(2))) {
       square.classList.add('playerOneToken')
+      boardSquares[idx].innerHTML = 'x'
       // console.log('match')
     } else {
       square.classList.remove('playerOneToken')
+      boardSquares[idx].innerHTML = ''
     }
   })
+
 
   // boardColors.forEach((square, idx) => {
   //   let squareLetter
