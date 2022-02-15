@@ -1,9 +1,13 @@
+body {
+  background-color:#cce3de;
+}
+
 .game-board {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
   grid-template-rows: 100px 100px 100px 100px 100px;
   justify-content: center;
-  margin: 80px;
+  margin: 50px;
 }
 
 .box {
@@ -39,12 +43,8 @@
 }
 
 #hidden {
-  background-color: white;
+  background-color: #cce3de;
   border: none;
-}
-
-.playerOneToken {
-  color: red;
 }
 
 .green{
