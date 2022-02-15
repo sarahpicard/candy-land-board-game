@@ -14,7 +14,7 @@ const resetBtn = document.getElementById('reset-button')
 
 
 let boardSquares = document.querySelectorAll('.box')
-console.log(boardSquares)
+
 let deck1El = document.getElementById('deck-1')
 let deck2El = document.getElementById('deck-2')
 
@@ -90,24 +90,34 @@ function render() {
   boardSquares.forEach((square, idx) => {
     square.style.background = boardColors[idx]
   })
-  //   for (let i = 0; i < boardColors.length; i++) {
-  //   if (boardColors[i] == 'g1') {
-  //     square.style.background = '#6fcb6c'
-  //   }
-  // }
-
+  boardColors.forEach((square, idx) => {
+    let squareLetter
+    if (boardColors[idx] === 1) {
+      squareLetter = 'X'
+    } else if (boardColors[idx] === -1) {
+      squareLetter = 'O'
+    } else if (boardColors[idx] === null) {
+      squareLetter = ''
+    }
+    boardSquares[idx].innerHTML = squareLetter
+  })
   if (!winner) {
     message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   } else {
     message.innerText = `Congratulations player ${winner === 1 ? 'One' : 'Two'}!`
   }
+    //   for (let i = 0; i < boardColors.length; i++) {
+  //   if (boardColors[i] == 'g1') {
+  //     square.style.background = '#6fcb6c'
+  //   }
+  // }
 }
 
 function cardToBoard(cardPicked) {
   console.log(playerLocation)
   for (i = playerLocation; i < boardColors.length; i++) {
     if (cardPicked[0] === boardColors[i]) {
-      movePlayer()
+      // movePlayer()
       return playerLocation = boardColors[i]
     }
   }
@@ -117,7 +127,7 @@ function cardToBoard(cardPicked) {
 //   // console.log(playerLocation)
 //   if (turn === 1) {
 //     playerLocation.innerText = 'X'
-//   } else {
+//   } else if (turn === -1) {
 //     playerLocation.innerText = 'O'
 //   }
 // }
