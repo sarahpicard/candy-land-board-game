@@ -1,4 +1,4 @@
-let winner, turn, playerLocation, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
+let winner, turn, playerOneLocation, playerTwoLocation, playerLocation, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
 
 let deck1 = []
 let deck2 = []
@@ -31,6 +31,8 @@ function init() {
   turn = 1
   winner = null
   playerLocation = 0
+  playerOneLocation = 0
+  playerTwoLocation = 0
   message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   boardColors = ['g1', 'p1', 'r1', 'y1', 'o1', 'b1', 'g2', 'p2', 'y2', 'r2', 'b2', 'p3', 'y3', 'g3', 'o2', 'r3', 'b3', 'p4', 'y4', 'g4', 'o3', 'r4', 'b4', 'p5', 'g5', 'y5', 'r5', 'o4', 'g6', 'y6', 'p6', 'b5']
   deck1 = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'o1', 'o2', 'o3', 'o4', 'o5', 'o6', 'o7', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'y1', 'y2', 'y3', 'y4', 'y5', 'y6', 'y7']
@@ -42,14 +44,17 @@ function init() {
 // STRETCH GOAL - modal at init for game directions 
 
 //----------------- CARD DECK FUNCTIONALITY ------------------------//
-function handleClick() {
+function handleClick(evt) {
   if (deck1.length > 0) {
     let randIdx = Math.floor(Math.random() * deck1.length)
     cardPicked = deck1.splice(randIdx, 1)
     deck2.push(cardPicked)
+    // let squareId
+    // boardSquares[squareId] = turn
     cardToBoard(cardPicked)
     renderCards(cardPicked)
     render()
+    // turn *= -1
   }
 }
 
@@ -85,19 +90,33 @@ function render() {
     }
   })
 
+// function render() {
+//   boardSquares.forEach((square, idx) => {
+//     if (turn === 1) {
+//       if (turn === 1 && playerOneLocation === parseInt(square.id.substring(2))) {
+//         square.classList.add('playerOneToken')
+//         boardSquares[idx].innerHTML = 'x'
+//         // console.log('match')
+//       } else {
+//         // boardSquares[playerOneLocation].innerHTML = ''
+//         // boardSquares.classList.remove('playerOneToken')
+//         // boardSquares[idx].innerHTML = ''
 
-  // boardColors.forEach((square, idx) => {
-  //   let squareLetter
-  //   // console.log(square)
-  //   if (boardColors[idx] === 1) {
-  //     squareLetter = 'X'
-  //   } else if (boardColors[idx] === -1) {
-  //     squareLetter = 'O'
-  //   } else if (boardColors[idx] === null) {
-  //     squareLetter = ''
-  //   }
-  //   boardSquares[idx].innerHTML = squareLetter
-  // })
+//       }
+//     }
+//     // square.style.background = boardColors[idx]
+//     // console.log('finding current square', square.id.substring(2))
+//     if (turn === -1) {
+//       if (turn === -1 && playerTwoLocation === parseInt(square.id.substring(2))) {
+//         square.classList.add('playerTwoToken')
+//         boardSquares[idx].innerHTML = 'o'
+//       } 
+//       // square[playerTwoLocation].innerHTML = ''
+//       // boardSquares.classList.remove('playerTwoToken')
+//         // boardSquares[idx].innerHTML = ''
+//     }
+//   })
+
   if (!winner) {
     message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   } else {
@@ -106,26 +125,44 @@ function render() {
 }
 
 function cardToBoard(cardPicked) {
+  playerLocation += 1
   console.log(playerLocation, 'player')
   for (i = playerLocation; i < boardColors.length; i++) {
     console.log('card picked', cardPicked[0])
     console.log(cardPicked[0][0], boardColors[i][0])
     if (cardPicked[0][0] === boardColors[i][0]) {
-      // movePlayer()
       console.log('match found on', i)
       return playerLocation = i
     }
   }
 }
 
-// function movePlayer() {
-//   // console.log(playerLocation)
+// if cardPicked doesn't equal boardColors[i], then  playerLocation
+// 
+
+// function cardToBoard(cardPicked) {
 //   if (turn === 1) {
-//     playerLocation.innerText = 'X'
+//   // console.log(playerLocation, 'player')
+//   for (i = playerOneLocation; i < boardColors.length; i++) {
+//     // console.log('card picked', cardPicked[0])
+//     // console.log(cardPicked[0][0], boardColors[i][0])
+//     if (cardPicked[0][0] === boardColors[i][0]) {
+//       // console.log('match found on', i)
+//       console.log(playerOneLocation, 'player1')
+//       return playerOneLocation = i
+//     }
+//   }
 //   } else if (turn === -1) {
-//     playerLocation.innerText = 'O'
+//   for (i = playerTwoLocation; i < boardColors.length; i++) {
+//     if (cardPicked[0][0] === boardColors[i][0]) {
+//       console.log(playerTwoLocation, 'player2')
+//       return playerTwoLocation = i
+//     }
 //   }
 // }
+// }
+
+
 
 
 
