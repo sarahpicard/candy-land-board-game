@@ -65,3 +65,9 @@ body {
 .orange {
   background-color: #ef9f6d;
 }
+
+#winning-house {
+  height: 210px;
+  width: 140px; 
+  float: right; 
+}
