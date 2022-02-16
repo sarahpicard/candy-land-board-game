@@ -75,20 +75,20 @@ function renderCards() {
   }
 }
 //----------------------------------------------------//
-
+// one player functionality 
 function render() {
   boardSquares.forEach((square, idx) => {
-    // square.style.background = boardColors[idx]
-    // console.log('finding current square', square.id.substring(2))
+    square.style.background = boardColors[idx]
     if (playerLocation === parseInt(square.id.substring(2))) {
       square.classList.add('playerOneToken')
       boardSquares[idx].innerHTML = 'x'
-      // console.log('match')
     } else {
       square.classList.remove('playerOneToken')
       boardSquares[idx].innerHTML = ''
     }
   })
+
+// two player functionality 
 
 // function render() {
 //   boardSquares.forEach((square, idx) => {
@@ -96,25 +96,21 @@ function render() {
 //       if (turn === 1 && playerOneLocation === parseInt(square.id.substring(2))) {
 //         square.classList.add('playerOneToken')
 //         boardSquares[idx].innerHTML = 'x'
-//         // console.log('match')
 //       } else {
-//         // boardSquares[playerOneLocation].innerHTML = ''
-//         // boardSquares.classList.remove('playerOneToken')
-//         // boardSquares[idx].innerHTML = ''
+//         boardSquares.classList.remove('playerOneToken')
+//         boardSquares[idx].innerHTML = ''
 
 //       }
 //     }
-//     // square.style.background = boardColors[idx]
-//     // console.log('finding current square', square.id.substring(2))
 //     if (turn === -1) {
 //       if (turn === -1 && playerTwoLocation === parseInt(square.id.substring(2))) {
 //         square.classList.add('playerTwoToken')
 //         boardSquares[idx].innerHTML = 'o'
-//       } 
-//       // square[playerTwoLocation].innerHTML = ''
-//       // boardSquares.classList.remove('playerTwoToken')
-//         // boardSquares[idx].innerHTML = ''
+//       } else {
+//       boardSquares.classList.remove('playerTwoToken')
+//       boardSquares[idx].innerHTML = ''
 //     }
+//    }
 //   })
 
   if (!winner) {
@@ -137,17 +133,12 @@ function cardToBoard(cardPicked) {
   }
 }
 
-// if cardPicked doesn't equal boardColors[i], then  playerLocation
-// 
+// cardToBoard function when there are two players
 
 // function cardToBoard(cardPicked) {
 //   if (turn === 1) {
-//   // console.log(playerLocation, 'player')
 //   for (i = playerOneLocation; i < boardColors.length; i++) {
-//     // console.log('card picked', cardPicked[0])
-//     // console.log(cardPicked[0][0], boardColors[i][0])
 //     if (cardPicked[0][0] === boardColors[i][0]) {
-//       // console.log('match found on', i)
 //       console.log(playerOneLocation, 'player1')
 //       return playerOneLocation = i
 //     }
@@ -167,37 +158,11 @@ function cardToBoard(cardPicked) {
 
 
 
-// ----------------------- IF USING HANDLECLICK ------//
-// ------ user would need to click on the spot corresponding to the card color
-
-// handleClick function to move game piece to the corresponding board spot
-
-// obtain the index of the square that has been clicked 
-
-// make sure that ONLY the next square of specified color CAN be clicked 
-
-// update the board array (index should be changed to only allow the lowest possible to be clicked now)
-
-// game piece is moved to corresponding game spot (in accordance with the index in board array)
-
-
-// ----- player turn is changed ----//
-// change turn of player (turn variable)
-
-
-// --------- WINNER FUNCTION -----------//
-// determine win conditions (player one clicks index X - last spot on board), etc. 
-
-
-// there can be no tie, someone reaches the finish line first. 
-// return null if winner function is not evaluated to true 
-// render()
 
 // ------------- RESTART GAME BUTTON ---------//
 // run init function if restart button is pressed 
 
 
-// ---------------------------------------------------------------------------------------------
 
 // ------- Random Planning (conceptual) ----------// 
 
