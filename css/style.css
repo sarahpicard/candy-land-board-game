@@ -6,8 +6,19 @@ body {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
   grid-template-rows: 100px 100px 100px 100px 100px;
+  position: absolute;
   justify-content: center;
-  margin: 50px;
+  padding: 100px; 
+  margin: 70px;
+  margin-left: 200px; 
+}
+
+#images {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px 100px ;
+  position: absolute;
+  justify-content: center;
 }
 
 .box {
@@ -15,7 +26,7 @@ body {
 }
 
 /* CARD FUNCTIONALITY  */
-.containter {
+.card-containter {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -66,7 +77,18 @@ body {
   background-color: #ef9f6d;
 }
 
-#winning-house {
-  height: 210px;
-  width: 140px; 
+.win-image {
+  height: 500px;
+  width: 350px;
 }
+
+#winning-cell {
+  grid-column-start: 12;
+  grid-column-end: 14;
+  grid-row-start: -10;
+  grid-row-end: 2;
+  position: absolute;
+  top: -130px; left: -60px;
+}
+
+

@@ -1,4 +1,4 @@
-let winner, turn, playerOneLocation, playerTwoLocation, playerLocation, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
+let winner, turn, playerOneLocation, playerTwoLocation, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
 
 let deck1 = []
 let deck2 = []
@@ -17,6 +17,9 @@ let boardSquares = document.querySelectorAll('.box')
 let deck1El = document.getElementById('deck-1')
 let deck2El = document.getElementById('deck-2')
 
+const image = document.createElement('player-one-game-piece')
+image.src = '../images/game-piece.png'
+
 
 //------------------------------------------------------------------------
 
@@ -31,7 +34,7 @@ init()
 function init() {
   turn = 1
   winner = null
-  playerLocation = 0
+  // playerLocation = 0
   playerOneLocation = 0
   playerTwoLocation = 0
   message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
@@ -50,8 +53,6 @@ function handleClick(evt) {
     let randIdx = Math.floor(Math.random() * deck1.length)
     cardPicked = deck1.splice(randIdx, 1)
     deck2.push(cardPicked)
-    // let squareId
-    // boardSquares[squareId] = turn
     cardToBoard(cardPicked)
     renderCards(cardPicked)
     render()
@@ -76,7 +77,7 @@ function renderCards() {
   }
 }
 //----------------------------------------------------//
-// one player functionality 
+
 function render() {
   if (turn === 1) {
     boardSquares.forEach((square, idx) => {
@@ -101,32 +102,6 @@ function render() {
       }
     })
   }
-
-  // two player functionality 
-
-  // function render() {
-  //   boardSquares.forEach((square, idx) => {
-  //     if (turn === 1) {
-  //       if (turn === 1 && playerOneLocation === parseInt(square.id.substring(2))) {
-  //         square.classList.add('playerOneToken')
-  //         boardSquares[idx].innerHTML = 'x'
-  //       } else {
-  //         boardSquares.classList.remove('playerOneToken')
-  //         boardSquares[idx].innerHTML = ''
-
-  //       }
-  //     }
-  //     if (turn === -1) {
-  //       if (turn === -1 && playerTwoLocation === parseInt(square.id.substring(2))) {
-  //         square.classList.add('playerTwoToken')
-  //         boardSquares[idx].innerHTML = 'o'
-  //       } else {
-  //       boardSquares.classList.remove('playerTwoToken')
-  //       boardSquares[idx].innerHTML = ''
-  //     }
-  //    }
-  //   })
-
   if (!winner) {
     message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   } else {
@@ -160,50 +135,16 @@ function cardToBoard(cardPicked) {
   }
 }
 
-// cardToBoard function when there are two players
-
-// function cardToBoard(cardPicked) {
-//   if (turn === 1) {
-//   for (i = playerOneLocation; i < boardColors.length; i++) {
-//     if (cardPicked[0][0] === boardColors[i][0]) {
-//       console.log(playerOneLocation, 'player1')
-//       return playerOneLocation = i
-//     }
-//   }
-//   } else if (turn === -1) {
-//   for (i = playerTwoLocation; i < boardColors.length; i++) {
-//     if (cardPicked[0][0] === boardColors[i][0]) {
-//       console.log(playerTwoLocation, 'player2')
-//       return playerTwoLocation = i
-//     }
-//   }
-// }
-// }
 
 
 
-
-
-
-
-// ------------- RESTART GAME BUTTON ---------//
-// run init function if restart button is pressed 
 
 
 
 // ------- Random Planning (conceptual) ----------// 
 
-// color that pops up in card deck should correspond with the first of that same color in an array - making it only possible for the player to click on that specific square on the game board (first in array, second in array, etc. until player reaches the end of the game board and win condition is met)
-
-// would be nicer if the player piece automatically moves to the first available color of card turned over (STRETCH GOAL) (would have to connect the card deck colors with game board color arrays and move the piece there automatically?)
 
 // single player game (the player will play both #1 and #2 until someone reaches the finish castle - win condition)
-
-// player 1 (holds 1)
-//player 2 (holds -1)
-
-// each square will map to a corresponding index in corresponding color array
-// index 0 - X (dependent upon actual board length and number of colored spots present in length)
 
 // allow for both players to be on the same square 
 
