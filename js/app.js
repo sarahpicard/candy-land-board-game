@@ -58,7 +58,7 @@ function handleClick(evt) {
     deck2.push(cardPicked)
     cardToBoard(cardPicked)
     renderCards(cardPicked)
-    isWinner = winner() 
+    isWinner = winner()
     render()
     turn *= -1
   }
@@ -102,7 +102,7 @@ function render() {
     message.innerText = `Congratulations player ${isWinner === 1 ? 'One' : 'Two'}!`
   } else {
     message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
-  } 
+  }
 }
 
 //-------------- function connecting card deck to board ------------//
