@@ -12,7 +12,7 @@
 - git
 
 ## Prototype 🚧
-![Initial Game Wireframe](../images/../unit-one-project/images/Screen%20Shot%202022-02-09%20at%209.51.16%20AM.png)
+![Initial Game Wireframe](../images/Screen%20Shot%202022-02-09%20at%209.51.16%20AM.png)
 
 ## Credits 💳
 - credit

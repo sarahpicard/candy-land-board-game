@@ -1,4 +1,5 @@
-let winner, turn, playerOneLocation, playerTwoLocation, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
+let isWinner, turn, playerOneLocation, playerTwoLocation, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
+// winner
 
 let deck1 = []
 let deck2 = []
@@ -35,7 +36,7 @@ init()
 
 function init() {
   turn = 1
-  winner = null
+  isWinner = null
   playerOneToken.classList.add('playerOneToken')
   playerTwoToken.classList.add('playerTwoToken')
   startSquare.appendChild(playerOneToken)
@@ -62,6 +63,7 @@ function handleClick(evt) {
     renderCards(cardPicked)
     render()
     turn *= -1
+    isWinner = winner()
   }
 }
 
@@ -99,7 +101,7 @@ function render() {
       }
     })
   }
-  if (!winner) {
+  if (!isWinner) {
     message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   } else {
     message.innerText = `Congratulations player ${winner === 1 ? 'One' : 'Two'}!`
@@ -129,6 +131,17 @@ function cardToBoard(cardPicked) {
         return playerTwoLocation = i
       }
     }
+  }
+}
+
+function winner() {
+  if (playerOneLocation === boardSquares[9]) return boardSquares[9]
+  if (playerTwoLocation === boardSquares[9]) return boardSquares[9]
+
+  if (boardSquares.includes(null)) {
+    return null
+  } else {
+    return 'T'
   }
 }
 
