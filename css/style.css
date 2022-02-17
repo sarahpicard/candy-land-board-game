@@ -9,6 +9,7 @@ body {
   grid-row-end: 2;
   position: absolute;
   top: 20px; 
+  color: darkmagenta;
 }
 
 .game-board {
@@ -262,3 +263,41 @@ body {
   z-index: 0;
 }
 
+.logo-image {
+  height: 450px; 
+  width: 450px;
+}
+#logo {
+  grid-column-start: 7;
+  grid-column-end: 10;
+  grid-row-start: 7;
+  grid-row-end: 9;
+  position: absolute;
+  right: -40px;
+}
+
+.icecream-tree {
+  height: 100px; 
+  width: 80px;
+}
+#ice-cream-tree {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  position: absolute;
+  top: 20px;
+}
+
+.icecream-tree2 {
+  height: 120px; 
+  width: 90px;
+}
+#ice-cream-tree2 {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  position: absolute;
+  top: 8px; left: 40px;
+}
