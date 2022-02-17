@@ -12,7 +12,7 @@
 - git
 
 ## Prototype 🚧
-![Initial Wireframe]("https://github.com/sarahpicard/candy-land-board-game/blob/d42756db86b1f0de6e25ca77628198d623e5ded1/Images/Screen%20Shot%202022-02-09%20at%209.51.16%20AM.png")
+![Initial Wireframe]("../images/../../images/Screen%20Shot%202022-02-09%20at%209.51.16%20AM.png")
 
 ## Credits 💳
 - Graphic Images: Canva (learn more about Canva's user license agreement [here](https://www.canva.com/policies/content-license-agreement/))
