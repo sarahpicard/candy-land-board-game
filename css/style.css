@@ -300,3 +300,16 @@ body {
   position: absolute;
   top: 8px; left: 40px;
 }
+
+.gloopy-mud{
+  height: 150px; 
+  width: 110px;
+}
+#gloopy {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  position: absolute;
+  top: -25px; right: 20px;
+}
