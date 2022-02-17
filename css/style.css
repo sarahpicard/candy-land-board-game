@@ -164,7 +164,7 @@ body {
   grid-row-start: 5;
   grid-row-end: 6;
   position: absolute;
-  top: -25px; 
+  top: -30px; 
 }
 
 .snow-mountain {
@@ -259,13 +259,13 @@ body {
   grid-row-start: 5;
   grid-row-end: 6;
   position: absolute;
-  top: -20px; right: -20px;
+  top: -25px; right: -20px;
   z-index: 0;
 }
 
 .mud-puddle {
-  height: 420px;
-  width: 370px;
+  height: 400px;
+  width: 350px;
 }
 #mudpuddle {
   grid-column-start: 1;
@@ -273,7 +273,7 @@ body {
   grid-row-start: 1;
   grid-row-end: 2;
   position: absolute;
-  top: -160px; right: -270px;
+  top: -169px; right: -270px;
   z-index: 0;
 }
 
