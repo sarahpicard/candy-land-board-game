@@ -6,7 +6,7 @@
 # [Play Candy Land Here!](https://candy-land.surge.sh/)
 
 ## Project Inspiration 🤔
-> I chose to re-create Candy Land because it was my favorite board game as a child 
+#### I chose to re-create Candy Land because it was my favorite board game as a child 
 
 ## Prototype 🚧
 ### Wireframe Inspiration 
