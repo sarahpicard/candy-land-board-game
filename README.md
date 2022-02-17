@@ -3,7 +3,6 @@
 > Candy Land is a re-creation of the Hasbro board game, Candy Land.  
 > The goal of the game is for one of the players to reach the last square to get to the winning candy castle! Players can navigate through the game board by drawing a card from the candy card deck. After drawing a card, the player's token will be automatically moved to the first available spot on the board which corresponds to the drawn card. 
 
-# [Play Candy Land Here!](https://candy-land.surge.sh/)
 
 ## Project Inspiration 🤔
 #### I chose to re-create Candy Land because it was my favorite board game as a child 
@@ -12,10 +11,12 @@
 ### Wireframe Inspiration 
 ![Imgur](https://i.imgur.com/OBLbXtG.png)
 
-## How to Play 🧩
+## Getting Started 🧩
 ### Start the game by clicking the "Draw Card" button in the lower left-hand corner. This will draw the first player card. 
 ![Imgur](https://i.imgur.com/BjKs0YO.png)
 ### Player tokens will progress through the board each time the user clicks the "Draw Card" button, alternating turns between players. 
+
+# [Play Candy Land Here!](https://candy-land.surge.sh/)
 
 ## Technologies Used 📺
 - Javascript
