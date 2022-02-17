@@ -12,7 +12,6 @@ const message = document.querySelector('#message')
 const gameBoard = document.querySelector('#board')
 const resetBtn = document.getElementById('reset-button')
 
-
 let boardSquares = document.querySelectorAll('.box')
 
 let deck1El = document.getElementById('deck-1')
@@ -21,8 +20,9 @@ let deck2El = document.getElementById('deck-2')
 const startSquare = document.getElementById('sq0')
 
 const playerOneToken = document.createElement("div")
-
 const playerTwoToken = document.createElement("div")
+
+const winSquare = document.getElementById('sq31')
 
 //------------------------------------------------------------------------
 
@@ -63,8 +63,8 @@ function handleClick(evt) {
     renderCards(cardPicked)
     render()
     turn *= -1
-    isWinner = winner()
   }
+  isWinner = winner() 
 }
 
 function renderCards() {
@@ -104,30 +104,23 @@ function render() {
   if (!isWinner) {
     message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   } else {
-    message.innerText = `Congratulations player ${winner === 1 ? 'One' : 'Two'}!`
-  }
+    message.innerText = `Congratulations player ${isWinner === 1 ? 'One' : 'Two'}!`
+  } 
 }
+
 
 function cardToBoard(cardPicked) {
   if (turn === 1) {
     playerOneLocation += 1
-    console.log(playerOneLocation, 'player')
     for (i = playerOneLocation; i < boardColors.length; i++) {
-      console.log('card picked', cardPicked[0])
-      console.log(cardPicked[0][0], boardColors[i][0])
       if (cardPicked[0][0] === boardColors[i][0]) {
-        console.log('match found on', i)
         return playerOneLocation = i
       }
     }
   } else {
     playerTwoLocation += 1
-    console.log(playerTwoLocation, 'player')
     for (i = playerTwoLocation; i < boardColors.length; i++) {
-      console.log('card picked', cardPicked[0])
-      console.log(cardPicked[0][0], boardColors[i][0])
       if (cardPicked[0][0] === boardColors[i][0]) {
-        console.log('match found on', i)
         return playerTwoLocation = i
       }
     }
@@ -135,27 +128,10 @@ function cardToBoard(cardPicked) {
 }
 
 function winner() {
-  if (playerOneLocation === boardSquares[9]) return boardSquares[9]
-  if (playerTwoLocation === boardSquares[9]) return boardSquares[9]
-
-  if (boardSquares.includes(null)) {
-    return null
-  } else {
-    return 'T'
-  }
+  if (playerOneLocation === winSquare.id.substring(2)) 
+  if (playerTwoLocation === winSquare.id.substring(2)) 
+  console.log(playerOneLocation)
+  console.log(playerTwoLocation)
+  console.log(boardSquares[9])
+  console.log(winSquare.id.substring(2))
 }
-
-
-
-
-
-
-
-// ------- Random Planning (conceptual) ----------// 
-
-
-// single player game (the player will play both #1 and #2 until someone reaches the finish castle - win condition)
-
-// allow for both players to be on the same square 
-
-// use modal upon first entering the page for game directions (bootstrap)- STRETCH GOAL
