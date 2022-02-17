@@ -83,8 +83,11 @@ function render() {
     boardSquares.forEach((square, idx) => {
       square.style.background = boardColors[idx]
       if (playerOneLocation === parseInt(square.id.substring(2))) {
-        square.classList.add('playerOneToken')
-        boardSquares[idx].innerHTML = 'x'
+        // square.classList.add('playerOneToken')
+        let div = document.createElement("div")
+        div.classList.add('playerOneToken')
+        square.appendChild(div)
+        // boardSquares[idx].innerHTML = 'x'
       } else {
         square.classList.remove('playerOneToken')
         boardSquares[idx].innerHTML = ''
@@ -94,10 +97,13 @@ function render() {
     boardSquares.forEach((square, idx) => {
       square.style.background = boardColors[idx]
       if (playerTwoLocation === parseInt(square.id.substring(2))) {
-        square.classList.add('playerOneToken')
-        boardSquares[idx].innerHTML = 'y'
+        // square.classList.add('playerOneToken')
+        let div = document.createElement("div")
+        div.classList.add('playerTwoToken')
+        square.appendChild(div)
+        // boardSquares[idx].innerHTML = 'y'
       } else {
-        square.classList.remove('playerOneToken')
+        square.classList.remove('playerTwoToken')
         boardSquares[idx].innerHTML = ''
       }
     })

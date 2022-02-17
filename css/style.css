@@ -35,6 +35,20 @@ body {
   border: 1px solid black;
 }
 
+.playerOneToken {
+  background-image: url("../images/game-piece.png");
+  height: 45%;
+  width: 45%;
+  background-size: cover;
+}
+
+.playerTwoToken {
+  background-image: url("../images/house.png");
+  height: 45%;
+  width: 45%;
+  background-size: cover;
+}
+
 /* CARD FUNCTIONALITY  */
 /* .card-containter {
   grid-column-start: 2;
