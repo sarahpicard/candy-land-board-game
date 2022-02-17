@@ -1,7 +1,6 @@
 body {
   background-color:#cce3de;
 }
-
 #message {
   grid-column-start: 5;
   grid-column-end: 12;
@@ -11,7 +10,6 @@ body {
   top: 20px; 
   color: darkmagenta;
 }
-
 .game-board {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
@@ -22,7 +20,6 @@ body {
   margin: 70px;
   margin-left: 200px; 
 }
-
 #images {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
@@ -31,91 +28,10 @@ body {
   justify-content: center;
 }
 
+/* individual game boxes */
 .box {
   border: 1px solid black;
 }
-
-.playerOneToken {
-  background-image: url("../images/game-piece-1.png");
-  height: 45%;
-  width: 45%;
-  background-size: cover;
-}
-
-.playerTwoToken {
-  background-image: url("../images/game-piece-2.png");
-  height: 45%;
-  width: 45%;
-  background-size: cover;
-}
-
-/* CARD FUNCTIONALITY  */
-/* .card-containter {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 7;
-  grid-row-end: 9;
-  position: absolute;
-  top: -25px; 
-} */
-
-#cards {
-  grid-column-start: 2;
-  grid-column-end: 7;
-  grid-row-start: 7;
-  grid-row-end: 10;
-  position: absolute;
-  top: 20px; 
-}
-
-.card {
-  margin: 3vh;
-}
-
-.card.outline {
-  border: 0.15em dashed #de82f1;
-}
-
-.card.shadow {
-  box-shadow: 7px 7px 7px 0 rgba(41, 41, 41, 0.95) !important;
-}
-
-/* card button */
-.btn {
-  margin-top: 2vh; 
-  color: white; 
-  background-color: #ff5a84;
-  font-weight: bold;
-  border: 2px solid #202d7a;
-}
-
-#card-button {
-  grid-column-start: 3;
-  grid-column-end: 5;
-  grid-row-start: 9;
-  grid-row-end: 10;
-  position: absolute;
-  top: 5px; left: 20px;
-}
-/* reset button */
-#reset-button {
-  color: white;
-  background-color: #ff5a84;
-  font-weight: bold;
-  border: 2px solid #202d7a;
-  border-radius: 0.25rem;
-  line-height: 1.5;
-  padding: 0.375rem 0.75rem;
-  text-align: center;
-  vertical-align: middle;
-}
-#reset-div {
-  grid-column-start: 11;
-  grid-column-end: 14;
-  grid-row-start: 8;
-  grid-row-end: 9;
-}
-
 #hidden {
   background-color: #cce3de;
   border: none;
@@ -140,11 +56,80 @@ body {
   background-color: #ef9f6d;
 }
 
+/* player tokens */
+.playerOneToken {
+  background-image: url("../images/game-piece-1.png");
+  height: 45%;
+  width: 45%;
+  background-size: cover;
+}
+.playerTwoToken {
+  background-image: url("../images/game-piece-2.png");
+  height: 45%;
+  width: 45%;
+  background-size: cover;
+}
+
+/* card deck */
+#cards {
+  grid-column-start: 2;
+  grid-column-end: 7;
+  grid-row-start: 7;
+  grid-row-end: 10;
+  position: absolute;
+  top: 20px; 
+}
+.card {
+  margin: 3vh;
+}
+.card.outline {
+  border: 0.15em dashed #de82f1;
+}
+.card.shadow {
+  box-shadow: 7px 7px 7px 0 rgba(41, 41, 41, 0.95) !important;
+}
+
+/* card button */
+.btn {
+  margin-top: 2vh; 
+  color: white; 
+  background-color: #ff5a84;
+  font-weight: bold;
+  border: 2px solid #202d7a;
+}
+#card-button {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 9;
+  grid-row-end: 10;
+  position: absolute;
+  top: 5px; left: 20px;
+}
+
+/* reset button */
+#reset-button {
+  color: white;
+  background-color: #ff5a84;
+  font-weight: bold;
+  border: 2px solid #202d7a;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  vertical-align: middle;
+}
+#reset-div {
+  grid-column-start: 11;
+  grid-column-end: 14;
+  grid-row-start: 8;
+  grid-row-end: 9;
+}
+
+/* images */
 .win-image {
   height: 500px;
   width: 350px;
 }
-
 #winning-cell {
   grid-column-start: 12;
   grid-column-end: 14;

@@ -1,12 +1,12 @@
+// ------------------------- variables ---------------------------//
 let isWinner, turn, playerOneLocation, playerTwoLocation, purpleSquares, greenSquares, blueSquares, orangeSquares, redSquares, yellowSquares
-// winner
 
 let deck1 = []
 let deck2 = []
 
 let cardToRemove, cardPicked
 
-//--------------------------------------------------------------------
+//----------------------------- cached element references -------------------------------//
 
 const message = document.querySelector('#message')
 const gameBoard = document.querySelector('#board')
@@ -24,14 +24,13 @@ const playerTwoToken = document.createElement("div")
 
 const winSquare = document.getElementById('sq31')
 
-//------------------------------------------------------------------------
+//---------------------------- event listeners --------------------------------------------//
 
 resetBtn.addEventListener('click', init)
 
 document.getElementById('card-button').addEventListener('click', handleClick)
 
-//------------------------------------------------------//
-
+//------------------------ init function ------------------------------//
 init()
 
 function init() {
@@ -51,9 +50,7 @@ function init() {
 
 }
 
-// STRETCH GOAL - modal at init for game directions 
-
-//----------------- CARD DECK FUNCTIONALITY ------------------------//
+//----------------- card deck functions & handleClick ------------------------//
 function handleClick(evt) {
   if (deck1.length > 0) {
     let randIdx = Math.floor(Math.random() * deck1.length)
@@ -61,10 +58,10 @@ function handleClick(evt) {
     deck2.push(cardPicked)
     cardToBoard(cardPicked)
     renderCards(cardPicked)
+    isWinner = winner() 
     render()
     turn *= -1
   }
-  isWinner = winner() 
 }
 
 function renderCards() {
@@ -83,8 +80,8 @@ function renderCards() {
     deck1El.classList.remove('back')
   }
 }
-//----------------------------------------------------//
 
+//------------------------- render function ---------------------------//
 function render() {
   if (turn === 1) {
     boardSquares.forEach((square, idx) => {
@@ -101,14 +98,14 @@ function render() {
       }
     })
   }
-  if (!isWinner) {
-    message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
-  } else {
+  if (isWinner) {
     message.innerText = `Congratulations player ${isWinner === 1 ? 'One' : 'Two'}!`
+  } else {
+    message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
   } 
 }
 
-
+//-------------- function connecting card deck to board ------------//
 function cardToBoard(cardPicked) {
   if (turn === 1) {
     playerOneLocation += 1
@@ -127,11 +124,9 @@ function cardToBoard(cardPicked) {
   }
 }
 
+//-------------- winner function ---------------------------------//
 function winner() {
-  if (playerOneLocation === winSquare.id.substring(2)) 
-  if (playerTwoLocation === winSquare.id.substring(2)) 
-  console.log(playerOneLocation)
-  console.log(playerTwoLocation)
-  console.log(boardSquares[9])
-  console.log(winSquare.id.substring(2))
+  if (playerOneLocation === parseInt(winSquare.id.substring(2))) return playerOneLocation
+  if (playerTwoLocation === parseInt(winSquare.id.substring(2))) return playerTwoLocation
 }
+
