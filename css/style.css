@@ -36,14 +36,14 @@ body {
 }
 
 .playerOneToken {
-  background-image: url("../images/game-piece.png");
+  background-image: url("../images/game-piece-1.png");
   height: 45%;
   width: 45%;
   background-size: cover;
 }
 
 .playerTwoToken {
-  background-image: url("../images/house.png");
+  background-image: url("../images/game-piece-2.png");
   height: 45%;
   width: 45%;
   background-size: cover;
