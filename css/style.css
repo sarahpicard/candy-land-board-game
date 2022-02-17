@@ -2,6 +2,15 @@ body {
   background-color:#cce3de;
 }
 
+#message {
+  grid-column-start: 5;
+  grid-column-end: 12;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  position: absolute;
+  top: 20px; 
+}
+
 .game-board {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
@@ -26,11 +35,22 @@ body {
 }
 
 /* CARD FUNCTIONALITY  */
-.card-containter {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+/* .card-containter {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 7;
+  grid-row-end: 9;
+  position: absolute;
+  top: -25px; 
+} */
+
+#cards {
+  grid-column-start: 2;
+  grid-column-end: 7;
+  grid-row-start: 7;
+  grid-row-end: 10;
+  position: absolute;
+  top: 20px; 
 }
 
 .card {
@@ -45,12 +65,40 @@ body {
   box-shadow: 7px 7px 7px 0 rgba(41, 41, 41, 0.95) !important;
 }
 
+/* card button */
 .btn {
   margin-top: 2vh; 
   color: white; 
-  background-color: #202d7a;
+  background-color: #ff5a84;
   font-weight: bold;
   border: 2px solid #202d7a;
+}
+
+#card-button {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 9;
+  grid-row-end: 10;
+  position: absolute;
+  top: 5px; left: 20px;
+}
+/* reset button */
+#reset-button {
+  color: white;
+  background-color: #ff5a84;
+  font-weight: bold;
+  border: 2px solid #202d7a;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  vertical-align: middle;
+}
+#reset-div {
+  grid-column-start: 11;
+  grid-column-end: 14;
+  grid-row-start: 8;
+  grid-row-end: 9;
 }
 
 #hidden {

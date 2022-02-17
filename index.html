@@ -20,11 +20,6 @@
 
 <body>
   <div id="board">
-    <h2 id="message">Message</h2>
-
-    <div class="reset-btn">
-      <button id="reset-button">Restart Game</button>
-    </div>
 
     <container class="play-area">
       <div class="game-board">
@@ -79,6 +74,15 @@
         <div class="box yellow" id="sq8"></div>
         <div class="box red" id="sq9"></div>
         <div id="images">
+          <h2 id="message">Message</h2>
+          <div class="card-container" id="cards">
+            <div id="deck-1" class="card large back shadow"></div>
+            <div id="deck-2" class="card large outline"></div>
+          </div>
+          <button id="card-button" class="btn">Draw Card</button>
+          <div class="reset-btn" id="reset-div">
+            <button id="reset-button">Restart Game</button>
+          </div>
           <div id="winning-cell">
             <img src="../images/winning-house.png" alt="winning-house" class="win-image" id="winning-house">
           </div>
@@ -113,12 +117,6 @@
       </div>
     </container>
 
-
-    <div class="card-container">
-      <div id="deck-1" class="card large back shadow"></div>
-      <div id="deck-2" class="card large outline"></div>
-    </div>
-    <button id="card-button" class="btn">Draw Card</button>
 
 
 </body>
