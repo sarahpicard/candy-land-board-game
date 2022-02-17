@@ -91,4 +91,97 @@ body {
   top: -130px; left: -60px;
 }
 
+.house-image {
+  height: 210px;
+  width: 160px;
+}
+#house {
+  grid-column-start: 6;
+  grid-column-end: 7;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  position: absolute;
+  top: -25px; 
+}
 
+.snow-mountain {
+  height: 100px; 
+  width: 90px;
+}
+#snow {
+  grid-column-start: 10;
+  grid-column-end: 11;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  position: absolute;
+  top: 35px; left: 30px;
+}
+
+.snow-mountain {
+  height: 100px; 
+  width: 90px;
+}
+#snow2 {
+  grid-column-start: 12;
+  grid-column-end: 13;
+  grid-row-start: 6;
+  grid-row-end: 7;
+  position: absolute;
+  top: 35px; right: 32px;
+}
+
+.candycane-tree {
+  height: 100px;
+  width: 70px;
+}
+#candy-cane-tree {
+  grid-column-start: 12;
+  grid-column-end: 13;
+  grid-row-start: 6;
+  grid-row-end: 7;
+  position: absolute;
+  top: 18px; right: 10px;
+  z-index: -12;
+}
+
+.candycane-tree {
+  height: 100px;
+  width: 70px;
+}
+#candy-cane-tree2 {
+  grid-column-start: 10;
+  grid-column-end: 11;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  position: absolute;
+  top: 18px; right: 30px;
+  z-index: 0;
+}
+
+.candycane-tree {
+  height: 100px;
+  width: 70px;
+}
+#candy-cane-tree3 {
+  grid-column-start: 12;
+  grid-column-end: 13;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  position: absolute;
+  top: 21px; left: -29px;
+  z-index: 0;
+}
+
+.candycane-tree4 {
+  height: 150px;
+  width: 95px;
+}
+#candy-cane-tree4 {
+  grid-column-start: 12;
+  grid-column-end: 13;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  position: absolute;
+  top: -20px; left: -45px;
+  z-index: 0;
+}
