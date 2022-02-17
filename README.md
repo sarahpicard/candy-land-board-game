@@ -12,7 +12,7 @@
 - git
 
 ## Prototype 🚧
-![Initial Wireframe]("../images/Screen%20Shot%202022-02-09%20at%209.51.16%20AM.png")
+![Initial Wireframe]("assets/images/Screen%20Shot%202022-02-09%20at%209.51.16%20AM.png")
 
 ## Credits 💳
 - Graphic Images: Canva (learn more about Canva's user license agreement [here](https://www.canva.com/policies/content-license-agreement/))
