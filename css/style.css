@@ -185,3 +185,32 @@ body {
   top: -20px; left: -45px;
   z-index: 0;
 }
+
+.green-tree {
+  height: 150px;
+  width: 95px;
+}
+#greentree1 {
+  grid-column-start: 7;
+  grid-column-end: 8;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  position: absolute;
+  top: -20px; right: -20px;
+  z-index: 0;
+}
+
+.mud-puddle {
+  height: 420px;
+  width: 370px;
+}
+#mudpuddle {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  position: absolute;
+  top: -160px; right: -270px;
+  z-index: 0;
+}
+
