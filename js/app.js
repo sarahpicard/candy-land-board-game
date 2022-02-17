@@ -17,9 +17,11 @@ let boardSquares = document.querySelectorAll('.box')
 let deck1El = document.getElementById('deck-1')
 let deck2El = document.getElementById('deck-2')
 
-const image = document.createElement('player-one-game-piece')
-image.src = '../images/game-piece.png'
+const startSquare = document.getElementById('sq0')
 
+const playerOneToken = document.createElement("div")
+
+const playerTwoToken = document.createElement("div")
 
 //------------------------------------------------------------------------
 
@@ -34,7 +36,10 @@ init()
 function init() {
   turn = 1
   winner = null
-  // playerLocation = 0
+  playerOneToken.classList.add('playerOneToken')
+  playerTwoToken.classList.add('playerTwoToken')
+  startSquare.appendChild(playerOneToken)
+  startSquare.appendChild(playerTwoToken)
   playerOneLocation = 0
   playerTwoLocation = 0
   message.innerText = `It's time for player ${turn === 1 ? 'One' : 'Two'} to choose a card!`
@@ -83,28 +88,14 @@ function render() {
     boardSquares.forEach((square, idx) => {
       square.style.background = boardColors[idx]
       if (playerOneLocation === parseInt(square.id.substring(2))) {
-        // square.classList.add('playerOneToken')
-        let div = document.createElement("div")
-        div.classList.add('playerOneToken')
-        square.appendChild(div)
-        // boardSquares[idx].innerHTML = 'x'
-      } else {
-        square.classList.remove('playerOneToken')
-        boardSquares[idx].innerHTML = ''
+        square.appendChild(playerOneToken)
       }
     })
   } else {
     boardSquares.forEach((square, idx) => {
       square.style.background = boardColors[idx]
       if (playerTwoLocation === parseInt(square.id.substring(2))) {
-        // square.classList.add('playerOneToken')
-        let div = document.createElement("div")
-        div.classList.add('playerTwoToken')
-        square.appendChild(div)
-        // boardSquares[idx].innerHTML = 'y'
-      } else {
-        square.classList.remove('playerTwoToken')
-        boardSquares[idx].innerHTML = ''
+        square.appendChild(playerTwoToken)
       }
     })
   }
