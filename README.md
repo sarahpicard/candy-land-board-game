@@ -11,6 +11,9 @@
 ### Wireframe Inspiration 
 ![Imgur](https://i.imgur.com/OBLbXtG.png)
 
+### Final Game Screenshot
+![Imgur](https://i.imgur.com/CUwb9by.png)
+
 ## Getting Started 🧩
 ### Start the game by clicking the "Draw Card" button in the lower left-hand corner. This will draw the first player card. 
 ![Imgur](https://i.imgur.com/BjKs0YO.png)

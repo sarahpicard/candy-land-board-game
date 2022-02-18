@@ -313,3 +313,17 @@ body {
   position: absolute;
   top: -25px; right: 20px;
 }
+
+.green-tree-4{
+  height: 150px; 
+  width: 100px;
+}
+#green-tree-3 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  position: absolute;
+  top: -20px; right: 5px;
+}
+
